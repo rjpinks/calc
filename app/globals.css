@@ -8,10 +8,12 @@ body {
     color: #02c7e6;
     padding-top: 24px;
     padding-bottom: 12px;
+    padding-left: 55px;
 }
 
 .instructions {
- color: #02c7e6;
+    color: #02c7e6;
+    padding-left: 45px;
 }
 
 .big {
@@ -23,6 +25,23 @@ body {
     margin-bottom: 5px;
 }
 
+.divide {
+    padding-left: 78px;
+    padding-right: 78px;
+    font-size: 17px;
+    font-weight: bolder;
+    margin-right: 9px;
+    margin-bottom: 5px;
+}
+
+.add {
+    padding-left: 76px;
+    padding-right: 77px;
+    font-size: 17px;
+    font-weight: bolder;
+    margin-right: 9px;
+    margin-bottom: 5px;
+}
 
 .lil {
     padding-left: 50px;
@@ -33,11 +52,11 @@ body {
 }
 
 .clear {
-    padding-left: 65px;
-    padding-right: 65px;
+    padding-left: 63px;
+    padding-right: 63px;
     font-size: 17px;
     font-weight: bolder;
-    margin-right: 1px;
+    margin-left: 10px;
     margin-bottom: 5px;
 }
 

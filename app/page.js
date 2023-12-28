@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <h1 className='title'>Let's do basic arithmetic!</h1>
-      <p className='instructions'>It currently does not do order of operations</p>
+      <p className='instructions'>Please Excuse My Dear Aunt Sally 🤓!!</p>
       <BtnGenerator />
     </>
   )

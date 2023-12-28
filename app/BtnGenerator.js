@@ -83,12 +83,12 @@ export default function BtnGenerator() {
                 {...buttons}
             </div>
             <div className='add-container'>
-                <button className="btn btn-outline-info big" onClick={() => btnHandler(" + ")}>+</button>
-                <button className="btn btn-outline-info big" onClick={() => btnHandler(" - ")}>-</button>
+                <button className="btn btn-outline-info add" onClick={() => btnHandler(" + ")}>+</button>
+                <button className="btn btn-outline-info add" onClick={() => btnHandler(" - ")}>-</button>
             </div>
             <div className='divide-container'>
-                <button className="btn btn-outline-info big" onClick={() => btnHandler(" / ")}>/</button>
-                <button className="btn btn-outline-info big" onClick={() => btnHandler(" * ")}>*</button>
+                <button className="btn btn-outline-info divide" onClick={() => btnHandler(" / ")}>/</button>
+                <button className="btn btn-outline-info divide" onClick={() => btnHandler(" * ")}>*</button>
             </div>
             <div className='clear-container'>
                 <button className="btn btn-outline-info big" onClick={() => equalsHandler()}>=</button>
