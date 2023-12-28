@@ -8,40 +8,51 @@ export default function BtnGenerator() {
     };
 
     function equalsHandler() {
-        // ERROR if they try to start or end the string with an operator
-        if (display[0] === " " || display[display.length - 1] === " ") {
-            return setDisplay("ERROR");
+
+        const parsedStr = display.split(" ");
+
+        // converts to number
+        for (let i = 0; i < parsedStr.length; i++) {
+          if (parsedStr[i] !== "+" && parsedStr[i] !== "-" && parsedStr[i] !== "*" && parsedStr[i] !== "/") {
+            parsedStr[i] = +parsedStr[i];
+          }
         }
-
-        const displayArr = display.split(" ");
-
-        // converts string to integer
-        for (let i = 0; i < displayArr.length; i++) {
-            if (displayArr[i] !== "+" && displayArr[i] !== "-" && displayArr[i] !== "/" && displayArr[i] !== "*") {
-                displayArr[i] = parseInt(displayArr[i]);
+      
+        let ordered = parsedStr;
+        // does * and / first
+        for (let i = 0; i < parsedStr.length; i++) {
+          if (ordered[i] === "*") {
+            const placeholder = [ordered[i - 1] * ordered[i + 1]];
+            const left = ordered.slice(0, i - 1);
+            if (i + 2 - ordered.length === 0) {
+              ordered = left.concat(placeholder);
+            } else {
+            const right = ordered.slice(i + 2 - ordered.length);
+            ordered = left.concat(placeholder, right);
+            }
+          } else if (ordered[i] === "/") {
+              const placeholder = [ordered[i - 1] / ordered[i + 1]];
+              const left = ordered.slice(0, i - 1);
+              if (i + 2 - ordered.length === 0) {
+                ordered = left.concat(placeholder);
+              } else {
+              const right = ordered.slice(i + 2 - ordered.length);
+              ordered = left.concat(placeholder, right);
+              }
             }
         }
-
-        // for loop that adds and subtracts as they come (no order of operations)
-        let value = displayArr[0];
-        for (let i = 1; i < displayArr.length - 1; i++) {
-            if (typeof displayArr[i] === 'number') {
-                console.log("skipping");
-                continue;
-            }
-            if (displayArr[i] === "+") {
-                value += displayArr[i + 1];
-            } else if (displayArr[i] === "-") {
-                value -= displayArr[i + 1];
-            } else if (displayArr[i] === "/") {
-                value /= displayArr[i + 1];
-            } else if (displayArr[i] === "*") {
-                value *= displayArr[i + 1];
-            }
+      
+        // does + and -, and assigns the value to value
+        let value = ordered[0]
+        for (let i = 1; i < ordered.length; i++) {
+          if (ordered[i] === "+") {
+            value += ordered[i + 1];
+          } else if (ordered[i] === "-") {
+            value -= ordered[i + 1];
+          }
         }
-        value = value.toString();
-        return setDisplay(value);
-
+      
+        return setDisplay(value.toString());
     };
 
     function negativeHandler(value) {
