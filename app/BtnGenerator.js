@@ -54,23 +54,35 @@ export default function BtnGenerator() {
     };
 
     const buttons = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
         const stringer = i.toString();
-        buttons.push(<button key={i} onClick={() => btnHandler(stringer)}>{i}</button>)
+        buttons.push(<button className='btn btn-outline-info lil' key={i} onClick={() => btnHandler(stringer)}>{i}</button>)
     };
 
     return (
-        <label>
+        <label id="display" className='form-label'>
             Display:
-            <input type="text" name="display" value={display} readOnly />
-            {...buttons}
-            <button onClick={() => btnHandler(" + ")}>+</button>
-            <button onClick={() => btnHandler(" - ")}>-</button>
-            <button onClick={() => btnHandler(" / ")}>/</button>
-            <button onClick={() => btnHandler(" * ")}>*</button>
-            <button onClick={() => equalsHandler()}>=</button>
-            <button onClick={() => negativeHandler("-")}>Neg</button>
-            <button onClick={() => setDisplay("")}>Clear</button>
+            <input className="form-control display-bar" type="text" name="display" value={display} readOnly />
+            <br></br>
+            <div className='big-container'>
+                <button className="btn btn-outline-info big" onClick={() => negativeHandler("-")}>Neg</button>
+                <button className="btn btn-outline-info big" onClick={() => btnHandler("0")}>0</button>
+            </div>
+            <div className='lil-container'>
+                {...buttons}
+            </div>
+            <div className='add-container'>
+                <button className="btn btn-outline-info big" onClick={() => btnHandler(" + ")}>+</button>
+                <button className="btn btn-outline-info big" onClick={() => btnHandler(" - ")}>-</button>
+            </div>
+            <div className='divide-container'>
+                <button className="btn btn-outline-info big" onClick={() => btnHandler(" / ")}>/</button>
+                <button className="btn btn-outline-info big" onClick={() => btnHandler(" * ")}>*</button>
+            </div>
+            <div className='clear-container'>
+                <button className="btn btn-outline-info big" onClick={() => equalsHandler()}>=</button>
+                <button className="btn btn-outline-info clear" onClick={() => setDisplay("")}>Clear</button>
+            </div>
         </label>
     );
 }

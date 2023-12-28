@@ -1,0 +1,52 @@
+body {
+    background-color: #020069;
+    max-width: 350px;
+    margin: auto;
+}
+
+.title {
+    color: #02c7e6;
+    padding-top: 24px;
+    padding-bottom: 12px;
+}
+
+.instructions {
+ color: #02c7e6;
+}
+
+.big {
+    padding-left: 75px;
+    padding-right: 75px;
+    font-size: 17px;
+    font-weight: bolder;
+    margin-right: 1px;
+    margin-bottom: 5px;
+}
+
+
+.lil {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 17px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.clear {
+    padding-left: 65px;
+    padding-right: 65px;
+    font-size: 17px;
+    font-weight: bolder;
+    margin-right: 1px;
+    margin-bottom: 5px;
+}
+
+.display-bar {
+    margin-bottom: 20px;
+    background-color: #02c7e6;
+    color: #020069;
+}
+
+#display {
+    color: #02c7e6;
+}
